@@ -1,5 +1,7 @@
 # Reunion with Polynomials
 
+[![Build Status](https://travis-ci.org/hf/reunion-polynomials.svg)](https://travis-ci.org/hf/reunion-polynomials)
+
 [Reunion](https://github.com/hf/reunion) with support for [Polynomials](https://github.com/hf/polynome).
 
 ## License
