@@ -6,4 +6,4 @@
 
 Copyright &copy; 2015 Stojan Dimitrovski.
 
-All code contained herein is licensed under the MIT License. A full text of the license can be found in the `LICENSE` file.
+All code contained herein is licensed under the MIT License. A full text of the license can be found in the `LICENSE.txt` file.
