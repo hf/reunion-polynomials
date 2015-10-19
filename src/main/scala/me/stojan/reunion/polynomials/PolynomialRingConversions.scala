@@ -1,6 +1,6 @@
 package me.stojan.reunion.polynomials
 
-import me.stojan.reunion.structure.{ Field, Ring }
+import me.stojan.reunion.structure.{ Field, Ring, FieldDescriptor }
 import me.stojan.reunion.euclidean.Euclidean
 
 import me.stojan.polynome.Polynomial
@@ -9,15 +9,15 @@ import me.stojan.polynome.Polynomial
  * Implicit conversions to polynomial rings.
  */
 object PolynomialRingConversions {
-  /** 
+  /**
    * Implicitly converts a polynomial with field coefficients to a euclidean domain.
    */
-  implicit def fieldPolynomialToEuclidean[V](p: Polynomial[Field[V]]): Euclidean[Polynomial[Field[V]]] = PolynomialRing.euclidean(p)
+  implicit def fieldPolynomialToEuclidean[V](p: Polynomial[Field[V]])(implicit coefficientDescriptor: FieldDescriptor[V]): Euclidean[Polynomial[Field[V]]] = PolynomialRing.euclidean(p)
 
   /**
    * Implicitly converts a polynomial with field coefficients to a ring.
    */
-  implicit def fieldPolynomialToRing[V](p: Polynomial[Field[V]]): Ring[Polynomial[Field[V]]] = PolynomialRing.ring(p)
+  implicit def fieldPolynomialToRing[V](p: Polynomial[Field[V]])(implicit coefficientDescriptor: FieldDescriptor[V]): Ring[Polynomial[Field[V]]] = PolynomialRing.ring(p)
 
   /**
    * Implicitly converts a polynomial ring (exposed as a ring) to the polynomial representation.
