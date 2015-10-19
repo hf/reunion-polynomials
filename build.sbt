@@ -2,7 +2,7 @@ name := "reunion-polynomials"
 
 organization := "me.stojan"
 
-version := "0.0.1-SNAPSHOT"
+version := "0.0.2-SNAPSHOT"
 
 publishMavenStyle := true
 
@@ -16,7 +16,7 @@ libraryDependencies += "org.scalamock" %% "scalamock-scalatest-support" % "3.2" 
 
 libraryDependencies += "me.stojan" %% "polynome" % "0.0.1-SNAPSHOT"
 
-libraryDependencies += "me.stojan" %% "reunion" % "0.0.1-SNAPSHOT"
+libraryDependencies += "me.stojan" %% "reunion" % "0.0.2-SNAPSHOT"
 
 homepage := Some(url("https://github.com/hf/reunion-polynomials"))
 

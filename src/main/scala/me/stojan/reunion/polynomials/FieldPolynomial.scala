@@ -24,14 +24,14 @@ private case class FPolynomial[V](degree: Long, coefficient: Field[V], override 
         FPolynomial(degree, coefficient, sub + p)
       }
     }
-    
+
   override def *+(p: Polynomial[Field[V]]): Polynomial[Field[V]] =
     FPolynomial(degree + p.degree, coefficient * p.coefficient, this.sub *+ p)
-    
-  override def /-(p: Polynomial[Field[V]]): Polynomial[Field[V]] = 
+
+  override def /-(p: Polynomial[Field[V]]): Polynomial[Field[V]] =
     // coefficient / p.coefficient will never be 0 since coefficient must not be 0
     FPolynomial(degree - p.degree, coefficient / p.coefficient, NullPolynomial[Field[V]]())
-    
+
   override def unary_-(): Polynomial[Field[V]] =
     FPolynomial(degree, -coefficient, -sub)
 }
@@ -40,7 +40,7 @@ private case class FPolynomial[V](degree: Long, coefficient: Field[V], override 
  * Contains helper functions for polynomials with field coefficients.
  */
 object FieldPolynomial {
-  /** 
+  /**
    * Returns a `NullPolynomial[Field[V]]`.
    */
   def apply[V](): Polynomial[Field[V]] = NullPolynomial[Field[V]]()
@@ -71,7 +71,7 @@ object FieldPolynomial {
   def greater[V](a: Polynomial[Field[V]], b: Polynomial[Field[V]]): Boolean =
     (a.degree > b.degree) || (a.degree == b.degree && a.degree > -1 && (a.coefficient > b.coefficient || FieldPolynomial.greater(a.sub, b.sub)))
 
-  /** 
+  /**
    * Checks whether `a` is less than (<) `b`.
    */
   def lesser[V](a: Polynomial[Field[V]], b: Polynomial[Field[V]]): Boolean =
